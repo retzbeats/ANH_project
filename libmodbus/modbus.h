@@ -121,8 +121,8 @@ enum {
 extern const unsigned int libmodbus_version_major;
 extern const unsigned int libmodbus_version_minor;
 extern const unsigned int libmodbus_version_micro;
-
-typedef struct _modbus modbus_t;
+/*subtipo de estructura _modbus */
+typedef struct _modbus modbus_t; 
 
 typedef struct {
     int nb_bits;
