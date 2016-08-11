@@ -24,14 +24,16 @@
 
 int main(void)
 {
-    int socket;
-    modbus_t *ctx;
-    modbus_mapping_t *mb_mapping;
+    int socket; //declaracion de un entero socket
+    modbus_t *ctx; // declaracion de apuntador a estructura subtipo modbus_t, ver modbus.h
+    modbus_mapping_t *mb_mapping; // declaracion de apuntador a estructura tipo modbus_mapping_t ver modbus.h
 
-    ctx = modbus_new_tcp("10.42.0.66", 1502);
+    ctx = modbus_new_tcp("10.42.0.66", 1502); //almacena en ctx la ip y el puerto en ctx que es de tipo modbus_t
+    /*modbus new tcp crea el contexto TCP para TCP/IPv4, el contexto tiene la direccion ip de esclavo modbus, el puerto
+     y los datos del backend*/ 
     /* modbus_set_debug(ctx, TRUE); */
 
-    mb_mapping = modbus_mapping_new(500, 500, 500, 500);
+    mb_mapping = modbus_mapping_new(500, 500, 500, 500); //crea un modbus mapping limpio en la variable mb_mapping
     if (mb_mapping == NULL) {
         fprintf(stderr, "Failed to allocate the mapping: %s\n",
                 modbus_strerror(errno));

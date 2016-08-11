@@ -16,7 +16,7 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
  */
 
-*/ Holaaaa
+
 
 #ifndef _MODBUS_H_
 #define _MODBUS_H_
@@ -123,9 +123,10 @@ enum {
 extern const unsigned int libmodbus_version_major;
 extern const unsigned int libmodbus_version_minor;
 extern const unsigned int libmodbus_version_micro;
-/*subtipo de estructura _modbus */
-typedef struct _modbus modbus_t; 
 
+/*Variable modbus_t de tipo estructura _modbus*/
+typedef struct _modbus modbus_t; 
+/*Variable modbus_mapping_t define el numero de bits y bits de entrada y el numero de registros y registros de entrada*/
 typedef struct {
     int nb_bits;
     int nb_input_bits;
