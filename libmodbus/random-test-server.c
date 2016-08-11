@@ -33,7 +33,9 @@ int main(void)
      y los datos del backend*/ 
     /* modbus_set_debug(ctx, TRUE); */
 
-    mb_mapping = modbus_mapping_new(500, 500, 500, 500); //crea un modbus mapping limpio en la variable mb_mapping
+    mb_mapping = modbus_mapping_new(500, 500, 500, 500); 
+    /*crea un modbus mapping limpio en la variable mb_mapping el primer parametro es el numero de coils, el segundo inputs
+    el tercero holding registers y el cuarto input registers*/
     if (mb_mapping == NULL) {
         fprintf(stderr, "Failed to allocate the mapping: %s\n",
                 modbus_strerror(errno));
@@ -45,8 +47,8 @@ int main(void)
     modbus_tcp_accept(ctx, &socket);
 
     for (;;) {
-        uint8_t query[MODBUS_TCP_MAX_ADU_LENGTH]; */Type: unsigned char, busca registro que correspondan a la máxima longitud del paquete Modbus TCP/IP */
-        int rc; */Declaración rc de tipo entero*/
+        uint8_t query[MODBUS_TCP_MAX_ADU_LENGTH]; /*Type: unsigned char, busca registro que correspondan a la máxima longitud del paquete Modbus TCP/IP */
+        int rc; /*Declaración rc de tipo entero*/
 
         rc = modbus_receive(ctx, query);
         if (rc != -1) {
